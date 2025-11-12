@@ -24,10 +24,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-TOKEN = "8586839921:AAEPymjk4EbY26navs3sJOgXmlpTS-OHMxA"
+TOKEN = "your_token_here"
 
 if not TOKEN:
-    raise RuntimeError("Пожалуйста, вставь реальный токен бота в переменную TOKEN и запусти заново.")
+    raise RuntimeError("invalid token")
 
 faker = Faker("en_US")
 
@@ -124,3 +124,4 @@ except RuntimeError as e:
     logger.warning("asyncio.run failed (%s). Falling back to creating task in existing loop.", e)
     loop = asyncio.get_event_loop()
     loop.create_task(main_app())
+
